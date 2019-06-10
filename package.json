@@ -1,0 +1,12 @@
+{
+  "name": "rocketseat",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Bzll/rocketseat.git",
+  "author": "bzll",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/preset-env": "^7.4.5"
+  }
+}
