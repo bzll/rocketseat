@@ -18,54 +18,49 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var List =
+// Challenge 1
+var User =
 /*#__PURE__*/
 function () {
-  function List() {
-    _classCallCheck(this, List);
+  function User() {
+    var email = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+    var senha = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
 
-    this.data = [];
+    _classCallCheck(this, User);
+
+    this.email = email;
+    this.senha = senha;
   }
 
-  _createClass(List, [{
-    key: "add",
-    value: function add(data) {
-      this.data.push(data);
-      console.log(this.data);
+  _createClass(User, [{
+    key: "isAdmin",
+    value: function isAdmin() {
+      return this.admin === true;
     }
   }]);
 
-  return List;
+  return User;
 }();
 
-var TodoList =
+var Admin =
 /*#__PURE__*/
-function (_List) {
-  _inherits(TodoList, _List);
+function (_User) {
+  _inherits(Admin, _User);
 
-  function TodoList() {
+  function Admin(email, senha) {
     var _this;
 
-    _classCallCheck(this, TodoList);
+    _classCallCheck(this, Admin);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(TodoList).call(this));
-    _this.usuario = 'Ciro';
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Admin).call(this, email, senha));
+    _this.admin = true;
     return _this;
   }
 
-  _createClass(TodoList, [{
-    key: "mostraUsuario",
-    value: function mostraUsuario() {
-      console.log(this.usuario);
-    }
-  }]);
+  return Admin;
+}(User);
 
-  return TodoList;
-}(List);
-
-var MinhaLista = new TodoList();
-
-document.getElementById('novotodo').onclick = function () {
-  MinhaLista.add('Novo Todo');
-  MinhaLista.mostraUsuario();
-};
+var User1 = new User("ciro.chagas@agroamazonia.com", "senha123");
+var Admin1 = new Admin("ciro.chagas@agroamazonia.com", "senha123");
+console.log(User1.isAdmin());
+console.log(Admin1.isAdmin());
