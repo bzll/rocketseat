@@ -23,3 +23,5 @@ const Admin1 = new Admin("ciro.chagas@agroamazonia.com","senha123");
 
 console.log(User1.isAdmin());
 console.log(Admin1.isAdmin());
+
+console.log('teste')

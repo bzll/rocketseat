@@ -18,7 +18,7 @@
     "socket.io": "^2.2.0"
   },
   "scripts": {
-    "bundle": "babel ./main.js -o ./bundle.js -w",
+    "bundle": "babel ./starter/main.js -o ./starter/bundle.js -w",
     "dev": "nodemon src\\index.js"
   },
   "devDependencies": {
