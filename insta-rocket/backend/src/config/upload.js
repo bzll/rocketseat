@@ -1,4 +1,4 @@
-/*Multer is a node.js middleware for handling multipart/form-data, which is primarily 
+/* Multer is a node.js middleware for handling multipart/form-data, which is primarily
 used for uploading files. It is written on top of busboy for maximum efficiency.
 NOTE: Multer will not process any form which is not multipart (multipart/form-data).
 https://www.npmjs.com/package/multer
@@ -10,10 +10,10 @@ const multer = require('multer');
 const path = require('path');
 
 module.exports = {
-    storage: new multer.diskStorage({
-        destination: path.resolve(__dirname, '..', '..', 'uploads'),
-        filename: function(req, file, cb){
-            cb(null, file.originalname);
-        }
-    })
+  storage: new multer.diskStorage({
+    destination: path.resolve(__dirname, '..', '..', 'uploads'),
+    filename(req, file, cb) {
+      cb(null, file.originalname);
+    },
+  }),
 };
