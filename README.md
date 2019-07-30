@@ -1,3 +1,3 @@
 # rocketseat
 
-Starting JavaScript
+Starting JavaScript, Node
